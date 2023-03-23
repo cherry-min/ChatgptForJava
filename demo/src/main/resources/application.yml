@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/gpt?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    hikari:
+      max-lifetime: 28800
+      idle-timeout: 28800
+      keepalive-time: 60000
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+mybatis-plus:
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true
+    default-statement-timeout: 3000
+openai:
+  key: your api key
+  url: https://api.openai.com/v1/chat/completions
+  model: gpt_3_5_turbo
+#  enableProxy: true
+#  proxy:
+#    proxy-host: 127.0.0.1
+#    proxy-port: 7890
+#    type: http
